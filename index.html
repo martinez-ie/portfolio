@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt" data-lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ingrid Martinez — Data & Full Stack</title>
+<meta name="description" content="Ingrid Martinez — Data Analytics & Full Stack Developer. 12 anos de experiencia comercial B2B com camada de analytics. Kilkenny, Irlanda." />
+<meta name="author" content="Ingrid Martinez" />
+<meta name="theme-color" content="#16202B" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ingrid Martinez — Data & Full Stack" />
+<meta property="og:description" content="Data Analytics & Full Stack Developer. 12 anos de experiencia comercial B2B com camada de analytics. Kilkenny, Irlanda." />
+<meta property="og:url" content="https://ingrid-martinez-portfolio.vercel.app/" />
+<meta property="og:image" content="https://ingrid-martinez-portfolio.vercel.app/og-image.png" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:locale:alternate" content="en_IE" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ingrid Martinez — Data & Full Stack" />
+<meta name="twitter:description" content="Data Analytics & Full Stack Developer. Kilkenny, Irlanda." />
+<meta name="twitter:image" content="https://ingrid-martinez-portfolio.vercel.app/og-image.png" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2316202B'/%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-size='52' font-weight='700' fill='%232D6FF0' text-anchor='middle'%3EIM%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Rethink+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#F4F2EC; --surface:#FFFFFF; --ink:#16202B; --navy:#1E3D59; --muted:#5C6773; --line:#E2DED3;
+    --accent:#2D6FF0; --accent-soft:#C6EBF7; --accent-deep:#1B4FB0;
+    --serif:'Fraunces',Georgia,serif; --sans:'Rethink Sans',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
+    --max:1180px; --side:230px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:var(--mono)}
+  [data-show="en"]{display:none}
+  html[data-lang="en"] [data-show="pt"]{display:none}
+  html[data-lang="en"] [data-show="en"]{display:revert}
+
+  /* Top bar */
+  .topbar{position:fixed;top:0;left:0;right:0;height:62px;z-index:60;background:rgba(244,242,236,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px}
+  .brand{font-family:var(--serif);font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+  .brand .mk{color:var(--accent)}
+  .top-right{display:flex;align-items:center;gap:18px}
+  .lang-btn{font-family:var(--mono);font-size:.76rem;border:1px solid var(--line);background:transparent;color:var(--ink);padding:6px 12px;border-radius:99px;cursor:pointer;transition:border-color .2s}
+  .lang-btn:hover{border-color:var(--accent)}
+  .lang-btn .on{color:var(--accent)}
+  .lang-btn .sep{color:var(--muted);margin:0 2px}
+  .menu-toggle{display:none;background:none;border:none;color:var(--ink);font-size:1.4rem;cursor:pointer}
+
+  /* Side index */
+  .sidenav{position:fixed;top:62px;left:0;width:var(--side);height:calc(100vh - 62px);padding:46px 28px;display:flex;flex-direction:column;gap:4px;z-index:40}
+  .sidenav .sn-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--muted);margin-bottom:20px}
+  .sidenav a{display:flex;align-items:baseline;gap:12px;padding:9px 0;font-size:.92rem;color:var(--muted);border-bottom:1px solid transparent;transition:color .2s}
+  .sidenav a .num{font-family:var(--mono);font-size:.72rem;color:var(--accent);opacity:.6}
+  .sidenav a:hover{color:var(--ink)}
+  .sidenav a.active{color:var(--ink);font-weight:600}
+  .sidenav a.active .num{opacity:1}
+  .sidenav .sn-foot{margin-top:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted);line-height:1.7}
+
+  /* Main column */
+  .main{margin-left:var(--side);padding-top:62px}
+  .wrap{max-width:var(--max);padding:0 56px}
+  @media(max-width:980px){
+    .sidenav{display:none}
+    .main{margin-left:0}
+    .wrap{padding:0 28px}
+    .menu-toggle{display:block}
+  }
+
+  /* Mobile menu drawer */
+  .mobile-nav{display:none}
+  @media(max-width:980px){
+    .mobile-nav{display:flex;position:fixed;inset:62px 0 auto 0;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--line);padding:18px 28px;gap:14px;z-index:55;transform:translateY(-130%);transition:transform .3s}
+    .mobile-nav.open{transform:translateY(0)}
+    .mobile-nav a{font-size:.95rem;color:var(--muted);display:flex;gap:10px}
+    .mobile-nav a .num{font-family:var(--mono);font-size:.72rem;color:var(--accent)}
+  }
+
+  /* Sections */
+  section{padding:88px 0;border-bottom:1px solid var(--line);position:relative}
+  section:first-of-type{border-bottom:1px solid var(--line)}
+  .sec-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--accent);margin-bottom:18px;text-transform:uppercase}
+  h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4vw,2.9rem);letter-spacing:-.02em;line-height:1.05}
+  .sec-sub{color:var(--muted);margin-top:18px;max-width:56ch;font-size:1.05rem}
+
+  /* Hero */
+  .hero{padding:96px 0 92px}
+  .hero .eyebrow{font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;color:var(--muted);margin-bottom:26px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;text-transform:uppercase}
+  .hero .tag{padding:5px 13px;border-radius:99px;font-size:.7rem;letter-spacing:.06em}
+  .tag.data{background:var(--navy);color:#fff}
+  .tag.dev{background:var(--accent);color:#fff}
+  h1.title{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,6.5vw,5rem);line-height:1.0;letter-spacing:-.03em;margin-bottom:30px;max-width:18ch}
+  h1.title em{font-style:italic;color:var(--accent)}
+  .lead{font-size:1.2rem;max-width:50ch;margin-bottom:16px;color:var(--ink)}
+  .lead strong{font-weight:600}
+  .sub{font-size:1rem;color:var(--muted);max-width:54ch;margin-bottom:38px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-family:var(--sans);font-weight:500;font-size:.95rem;padding:13px 26px;border-radius:99px;cursor:pointer;transition:transform .15s,background .2s,color .2s,border-color .2s;display:inline-flex;align-items:center;gap:8px;border:1.5px solid transparent}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px)}
+
+  /* Skills */
+  .skill-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+  @media(max-width:760px){.skill-cols{grid-template-columns:1fr}}
+  .skill-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:32px}
+  .skill-card h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;display:flex;align-items:center;gap:12px;margin-bottom:22px}
+  .skill-card h3 .pip{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .skill-card.data h3 .pip{background:var(--navy)} .skill-card.dev h3 .pip{background:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-family:var(--mono);font-size:.77rem;padding:7px 13px;border-radius:99px;background:var(--bg);border:1px solid var(--line);transition:border-color .2s}
+  .skill-card.data .chip:hover{border-color:var(--navy)} .skill-card.dev .chip:hover{border-color:var(--accent)}
+
+  /* Projects */
+  .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+  @media(max-width:760px){.proj-grid{grid-template-columns:1fr}}
+  .proj{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:30px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;overflow:hidden}
+  .proj:hover{transform:translateY(-3px);box-shadow:0 20px 44px -26px rgba(22,32,43,.34)}
+  .proj.featured{grid-column:1/-1;background:var(--navy);color:#fff;border-color:var(--navy)}
+  .proj.featured p{color:#cdd8e2}
+  .proj.featured .proj-kind{background:rgba(255,255,255,.14);color:#fff}
+  .proj.featured .metric b{color:var(--accent-soft)}
+  .proj.featured .metric span{color:#9fb0c0}
+  .proj.featured .stack span{background:rgba(255,255,255,.1);color:#e7eef4}
+  .proj.featured .proj-links a{color:var(--accent-soft)}
+  .thumb{width:calc(100% + 60px);margin:-30px -30px 22px;height:152px;display:block;border-bottom:1px solid var(--line)}
+  .proj.featured .thumb{width:auto;margin:0 0 22px;height:140px;border:none;border-radius:5px;overflow:hidden}
+  .thumb svg{width:100%;height:100%;display:block}
+  .proj-kind{font-family:var(--mono);font-size:.7rem;padding:4px 11px;border-radius:99px;align-self:flex-start;margin-bottom:16px;letter-spacing:.04em}
+  .proj-kind.data{color:var(--navy);background:var(--accent-soft)}
+  .proj-kind.dev{color:var(--accent);background:rgba(45,111,240,.1)}
+  .proj h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;margin-bottom:11px;letter-spacing:-.01em}
+  .proj p{color:var(--muted);font-size:.94rem;margin-bottom:18px;flex:1}
+  .metrics{display:flex;gap:28px;margin-bottom:18px;flex-wrap:wrap}
+  .metric{display:flex;flex-direction:column}
+  .metric b{font-family:var(--serif);font-size:1.9rem;line-height:1;color:var(--navy)}
+  .metric span{font-size:.7rem;color:var(--muted);font-family:var(--mono);margin-top:6px;letter-spacing:.04em}
+  .stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+  .stack span{font-family:var(--mono);font-size:.72rem;color:var(--muted);padding:4px 10px;background:var(--bg);border-radius:99px}
+  .proj-links{display:flex;gap:18px}
+  .proj-links a{font-family:var(--sans);font-size:.88rem;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:5px}
+  .proj-links a:hover{text-decoration:underline}
+  /* Context meta on projects (cliente / ano / tipo) */
+  .proj-meta{font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.04em;margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .proj-meta .dot{opacity:.5}
+  .proj.featured .proj-meta{color:#9fb0c0}
+  /* Bento: make featured cards taller and airier */
+  .proj.featured{padding:36px}
+  .proj.featured .thumb{height:200px}
+  @media(min-width:761px){
+    .proj.featured .thumb{height:240px}
+  }
+
+  /* Experience */
+  .timeline{position:relative;padding-left:30px;margin-top:44px}
+  .timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:var(--line)}
+  .tl{position:relative;padding-bottom:36px}
+  .tl:last-child{padding-bottom:0}
+  .tl::before{content:"";position:absolute;left:-28px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--navy)}
+  .tl.dev::before{border-color:var(--accent)}
+  .tl .when{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+  .tl h3{font-family:var(--serif);font-weight:500;font-size:1.25rem;margin:5px 0 2px}
+  .tl .role{font-size:.92rem;color:var(--navy);font-weight:600}
+  .tl .role.dev{color:var(--accent)}
+  .tl p{font-size:.9rem;color:var(--muted);margin-top:7px;max-width:62ch}
+  .tl .place{font-size:.75rem;color:var(--muted);font-family:var(--mono);margin-top:5px}
+  details.more summary{cursor:pointer;font-family:var(--sans);font-weight:600;font-size:.9rem;color:var(--accent);margin-top:24px;list-style:none}
+  details.more summary::-webkit-details-marker{display:none}
+  details.more summary::before{content:"+ "}
+  details.more[open] summary::before{content:"\2013 "}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:44px}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+  .ci{margin-bottom:24px}
+  .ci .lbl{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--muted);margin-bottom:5px;text-transform:uppercase}
+  .ci a,.ci span{font-size:1.05rem}
+  .ci a:hover{color:var(--accent)}
+  .langs{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+  .langs .lg{font-family:var(--mono);font-size:.8rem;padding:5px 12px;border-radius:99px;background:var(--surface);border:1px solid var(--line)}
+  .langs .lg b{color:var(--accent);font-weight:600}
+  .socials{display:flex;gap:14px;margin-top:28px}
+  .socials a{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s,transform .15s}
+  .socials a:hover{border-color:var(--accent);background:var(--accent);transform:translateY(-2px)}
+  .socials a:hover svg{fill:#fff}
+  .socials svg{width:19px;height:19px;fill:var(--ink);transition:fill .2s}
+  .contact-cta{background:var(--accent-soft);border-radius:6px;padding:36px}
+  .contact-cta h3{font-family:var(--serif);font-weight:500;font-size:1.45rem;margin-bottom:12px;color:var(--navy)}
+  .contact-cta p{color:#2b4a63;font-size:.96rem;margin-bottom:24px}
+  .contact-cta .btn-primary{background:var(--navy)}
+  .contact-cta .btn-primary:hover{background:var(--ink)}
+
+  footer{background:var(--ink);color:#9fb0c0;padding:40px 0;font-family:var(--mono);font-size:.8rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+  ::selection{background:var(--accent-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+  .skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:6px;z-index:100;font-family:var(--sans)}
+  .skip:focus{left:16px}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a href="#home" class="skip" data-show="pt">Pular para o conteudo</a>
+<a href="#home" class="skip" data-show="en">Skip to content</a>
+
+<div class="topbar">
+  <a href="#home" class="brand">Ingrid Martinez<span class="mk">.</span></a>
+  <div class="top-right">
+    <button class="lang-btn" id="langBtn" aria-label="Toggle language"><span class="pt on">PT</span><span class="sep">/</span><span class="en">EN</span></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
+  </div>
+</div>
+
+<nav class="sidenav" aria-label="Indice">
+  <div class="sn-label" data-show="pt">INDICE</div><div class="sn-label" data-show="en">INDEX</div>
+  <a href="#home" data-sec="home"><span class="num">01</span><span data-show="pt">Inicio</span><span data-show="en">Home</span></a>
+  <a href="#skills" data-sec="skills"><span class="num">02</span><span data-show="pt">Habilidades</span><span data-show="en">Skills</span></a>
+  <a href="#projects" data-sec="projects"><span class="num">03</span><span data-show="pt">Projetos</span><span data-show="en">Projects</span></a>
+  <a href="#experience" data-sec="experience"><span class="num">04</span><span data-show="pt">Trajetoria</span><span data-show="en">Journey</span></a>
+  <a href="#contact" data-sec="contact"><span class="num">05</span><span data-show="pt">Contato</span><span data-show="en">Contact</span></a>
+  <div class="sn-foot">Kilkenny, IE<br>Data &amp; Full Stack</div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home"><span class="num">01</span><span data-show="pt">Inicio</span><span data-show="en">Home</span></a>
+  <a href="#skills"><span class="num">02</span><span data-show="pt">Habilidades</span><span data-show="en">Skills</span></a>
+  <a href="#projects"><span class="num">03</span><span data-show="pt">Projetos</span><span data-show="en">Projects</span></a>
+  <a href="#experience"><span class="num">04</span><span data-show="pt">Trajetoria</span><span data-show="en">Journey</span></a>
+  <a href="#contact"><span class="num">05</span><span data-show="pt">Contato</span><span data-show="en">Contact</span></a>
+</div>
+
+<div class="main">
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span class="tag data">Data Analytics</span>
+      <span class="tag dev">Full Stack</span>
+      <span data-show="pt">Kilkenny, Irlanda</span><span data-show="en">Kilkenny, Ireland</span>
+    </div>
+    <h1 class="title" data-show="pt">Oi, eu sou a <em>Ingrid</em> <span class="wave">&#128075;</span></h1>
+    <h1 class="title" data-show="en">Hi, I'm <em>Ingrid</em> <span class="wave">&#128075;</span></h1>
+    <p class="lead" data-show="pt">São <strong>12 anos construindo relações comerciais B2B</strong> e uma paixão por tecnologia que cresceu até virar carreira. Não troquei uma coisa pela outra: aprendi a unir as duas.</p>
+    <p class="lead" data-show="en">That's <strong>12 years building B2B commercial relationships</strong> and a passion for technology that grew into a career. I didn't swap one for the other: I learned to bring them together.</p>
+    <p class="sub" data-show="pt">Hoje uno a leitura de negócio de quem viveu o comercial à capacidade técnica de construir, do dado à interface. Cientista de dados em formação e desenvolvedora full stack, apaixonada pela área. Kilkenny, Irlanda &middot; Inglês avançado &middot; Stamp 1G.</p>
+    <p class="sub" data-show="en">Today I blend the business sense of someone who lived in sales with the technical ability to build, from data to interface. Data scientist in training and full stack developer, in love with the field. Kilkenny, Ireland &middot; Advanced English &middot; Stamp 1G.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#projects" data-show="pt">Ver projetos</a><a class="btn btn-primary" href="#projects" data-show="en">View projects</a>
+      <a class="btn btn-ghost" href="#contact" data-show="pt">Entrar em contato</a><a class="btn btn-ghost" href="#contact" data-show="en">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-tag">// 02</div>
+    <h2 data-show="pt">Dois mundos, um perfil</h2><h2 data-show="en">Two worlds, one profile</h2>
+    <p class="sec-sub" data-show="pt">Trabalho na ponte entre analise de dados e desenvolvimento: entendo o negocio, estruturo o dado e entrego a aplicacao.</p>
+    <p class="sec-sub" data-show="en">I work at the bridge between data analytics and development: I understand the business, structure the data, and ship the application.</p>
+    <div class="skill-cols">
+      <div class="skill-card data reveal">
+        <h3><span class="pip"></span> <span data-show="pt">Dados &amp; Analise</span><span data-show="en">Data &amp; Analytics</span></h3>
+        <div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Pandas</span><span class="chip">Scikit-learn</span><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Excel</span><span class="chip">Jupyter</span><span class="chip">ETL</span><span class="chip">Machine Learning</span></div>
+      </div>
+      <div class="skill-card dev reveal">
+        <h3><span class="pip"></span> <span data-show="pt">Desenvolvimento Full Stack</span><span data-show="en">Full Stack Development</span></h3>
+        <div class="chips"><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">Styled-Components</span><span class="chip">Jest / RTL</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Git</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-tag">// 03</div>
+    <h2 data-show="pt">Projetos em destaque</h2><h2 data-show="en">Featured projects</h2>
+    <p class="sec-sub" data-show="pt">Projetos reais que cobrem o ciclo completo: do modelo de dados a interface acessivel e testada.</p>
+    <p class="sec-sub" data-show="en">Real projects covering the full cycle: from data modeling to accessible, tested interfaces.</p>
+    <div class="proj-grid">
+
+      <article class="proj featured reveal">
+        <span class="thumb" aria-hidden="true"><svg viewBox="0 0 400 130" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="lacreiG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1F9E6E"/><stop offset="1" stop-color="#0E6E5C"/></linearGradient></defs><rect width="400" height="130" fill="#fff"/><rect width="400" height="46" fill="url(#lacreiG)"/><rect x="20" y="12" width="22" height="22" rx="5" fill="#fff"/><text x="30" y="29" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#1F9E6E" text-anchor="middle">LS</text><rect x="50" y="16" width="56" height="7" rx="3" fill="#fff"/><rect x="50" y="27" width="40" height="5" rx="2" fill="#ffffff99"/><rect x="20" y="64" width="150" height="13" rx="3" fill="#16202B"/><rect x="20" y="84" width="220" height="6" rx="3" fill="#cfc8bc"/><rect x="20" y="100" width="92" height="16" rx="8" fill="#1F9E6E"/><rect x="122" y="100" width="92" height="16" rx="8" fill="none" stroke="#1F9E6E" stroke-width="1.5"/></svg></span>
+        <span class="proj-kind dev" data-show="pt">Full Stack &middot; Destaque</span><span class="proj-kind dev" data-show="en">Full Stack &middot; Featured</span>
+        <h3 data-show="pt">Lacrei Saude &mdash; Desafio Front-End</h3><div class="proj-meta"><span>Lacrei Saude</span><span class="dot">&middot;</span><span>2026</span><span class="dot">&middot;</span><span data-show="pt">Voluntariado</span><span data-show="en">Volunteer</span></div>
+        <h3 data-show="en">Lacrei Saude &mdash; Front-End Challenge</h3>
+        <p data-show="pt">Aceitei o desafio tecnico da Lacrei Saude e levei a serio o que mais importa: acessibilidade de verdade, nao decorativa. Recebi feedback do proprio fundador e refiz contraste, testes e documentacao ate bater 100 de acessibilidade no Lighthouse. Aqui, inclusao comeca no codigo.</p>
+        <p data-show="en">I took on Lacrei Saude's technical challenge and took the part that matters most seriously: real accessibility, not decorative. I got feedback from the founder himself and reworked contrast, tests and documentation until I hit a 100 accessibility score on Lighthouse. Here, inclusion starts in the code.</p>
+        <div class="metrics"><div class="metric"><b>100</b><span data-show="pt">Acessibilidade</span><span data-show="en">Accessibility</span></div><div class="metric"><b>97</b><span>Performance</span></div><div class="metric"><b>WCAG</b><span data-show="pt">Contraste AA</span><span data-show="en">AA contrast</span></div></div>
+        <div class="stack"><span>Next.js</span><span>TypeScript</span><span>Styled-Components</span><span>Jest</span><span>RTL</span></div>
+        <div class="proj-links">
+          <a href="https://lacrei-frontend-challenge-six.vercel.app/" target="_blank" rel="noopener" data-show="pt">Demo ao vivo &#8599;</a><a href="https://lacrei-frontend-challenge-six.vercel.app/" target="_blank" rel="noopener" data-show="en">Live demo &#8599;</a>
+          <a href="https://github.com/martinez-ie/lacrei-frontend-challenge" target="_blank" rel="noopener" data-show="pt">Codigo &#8599;</a><a href="https://github.com/martinez-ie/lacrei-frontend-challenge" target="_blank" rel="noopener" data-show="en">Code &#8599;</a>
+        </div>
+      </article>
+
+      <article class="proj featured reveal">
+        <span class="thumb" aria-hidden="true"><svg viewBox="0 0 400 130" preserveAspectRatio="xMidYMid slice"><rect width="400" height="130" fill="#fff"/><circle cx="42" cy="34" r="3.5" fill="#1F9E6E"/><text x="52" y="38" font-family="JetBrains Mono,monospace" font-size="10" letter-spacing="2" fill="#16202B">LUME</text><text x="40" y="76" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#16202B">Consultoria</text><text x="40" y="104" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#16202B">em dados.</text><rect x="300" y="58" width="76" height="22" rx="6" fill="#16202B"/><text x="338" y="73" font-family="Rethink Sans,Arial" font-size="11" fill="#fff" text-anchor="middle">Entrar</text></svg></span>
+        <span class="proj-kind dev" data-show="pt">Produto Full Stack &middot; Autoral</span><span class="proj-kind dev" data-show="en">Full Stack Product &middot; Original</span>
+        <div class="proj-meta"><span data-show="pt">Autoral</span><span data-show="en">Original</span><span class="dot">&middot;</span><span>2026</span><span class="dot">&middot;</span><span data-show="pt">Produto</span><span data-show="en">Product</span></div>
+        <h3>Lume &mdash; <span data-show="pt">Consultoria em Dados</span><span data-show="en">Data Consulting</span></h3>
+        <p data-show="pt">Minha ideia virou produto: uma aplicacao onde profissionais de dados criam e acompanham briefings de clientes, organizando a estrategia em nove etapas. Construi tudo, do login ao fluxo guiado. E o lugar onde meus dois mundos se encontram: a escuta comercial de quem atendeu cliente e a mao de quem agora constroi.</p>
+        <p data-show="en">My idea became a product: an app where data professionals create and track client briefings, organizing the strategy across nine steps. I built it all, from login to guided flow. It's where my two worlds meet: the commercial listening of someone who served clients, and the hands of someone who now builds.</p>
+        <div class="stack"><span>Full Stack</span><span data-show="pt">Autenticacao</span><span data-show="en">Auth</span><span data-show="pt">Painel</span><span data-show="en">Dashboard</span><span data-show="pt">Estrategia de Dados</span><span data-show="en">Data Strategy</span></div>
+        <div class="proj-links">
+          <a href="https://lume-ashy-beta.vercel.app/" target="_blank" rel="noopener" data-show="pt">Demo ao vivo &#8599;</a><a href="https://lume-ashy-beta.vercel.app/" target="_blank" rel="noopener" data-show="en">Live demo &#8599;</a>
+          <a href="https://github.com/martinez-ie/lume" target="_blank" rel="noopener" data-show="pt">Codigo &#8599;</a><a href="https://github.com/martinez-ie/lume" target="_blank" rel="noopener" data-show="en">Code &#8599;</a>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <span class="thumb" aria-hidden="true"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#F4F2EC"/><path d="M0,110 C80,90 140,120 200,70 C260,30 320,60 400,30" fill="none" stroke="#1E3D59" stroke-width="3"/><circle cx="200" cy="70" r="6" fill="#2D6FF0"/><circle cx="320" cy="60" r="5" fill="#C6EBF7"/><rect x="30" y="120" width="14" height="18" fill="#1E3D59" opacity=".5"/><rect x="54" y="112" width="14" height="26" fill="#1E3D59" opacity=".5"/><rect x="78" y="124" width="14" height="14" fill="#1E3D59" opacity=".5"/></svg></span>
+        <span class="proj-kind data">Machine Learning</span>
+        <h3 data-show="pt">Previsao de Churn de Clientes</h3><div class="proj-meta"><span data-show="pt">Projeto pessoal</span><span data-show="en">Personal project</span><span class="dot">&middot;</span><span data-show="pt">Estudo</span><span data-show="en">Study</span></div>
+        <h3 data-show="en">Customer Churn Prediction</h3>
+        <p data-show="pt">Quais clientes estao prestes a sair, e da pra saber antes? Construi um modelo que aprende os sinais de quem esta de saida, do tratamento dos dados ate a avaliacao. Vendo isso com olhos de quem ja cuidou de carteira: prever churn e proteger receita.</p>
+        <p data-show="en">Which customers are about to leave, and can we know before they do? I built a model that learns the signals of someone on their way out, from data cleaning to evaluation. I see this through the eyes of someone who managed accounts: predicting churn is protecting revenue.</p>
+        <div class="stack"><span>Python</span><span>Scikit-learn</span><span>Pandas</span></div>
+        <div class="proj-links"><a href="https://github.com/martinez-ie/python_previsaoChurn" target="_blank" rel="noopener" data-show="pt">Codigo &#8599;</a><a href="https://github.com/martinez-ie/python_previsaoChurn" target="_blank" rel="noopener" data-show="en">Code &#8599;</a></div>
+      </article>
+
+      <article class="proj reveal">
+        <span class="thumb" aria-hidden="true"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#F4F2EC"/><circle cx="200" cy="75" r="50" fill="none" stroke="#C6EBF7" stroke-width="16"/><circle cx="200" cy="75" r="50" fill="none" stroke="#2D6FF0" stroke-width="16" stroke-dasharray="105 314" transform="rotate(-90 200 75)"/><circle cx="120" cy="40" r="7" fill="#1E3D59"/><circle cx="300" cy="50" r="5" fill="#1E3D59"/><circle cx="290" cy="115" r="6" fill="#C6EBF7"/></svg></span>
+        <span class="proj-kind data">Machine Learning</span>
+        <h3 data-show="pt">Player Churn Prediction</h3><div class="proj-meta"><span data-show="pt">Projeto pessoal</span><span data-show="en">Personal project</span><span class="dot">&middot;</span><span data-show="pt">Games &middot; Estudo</span><span data-show="en">Games &middot; Study</span></div>
+        <h3 data-show="en">Player Churn Prediction</h3>
+        <p data-show="pt">Como gamer, quis entender por que jogadores abandonam um jogo, e juntei o util ao que amo. Um modelo de classificacao que prediz a evasao de players, aplicando analytics a dados de gaming.</p>
+        <p data-show="en">As a gamer, I wanted to understand why players leave a game, so I combined the useful with what I love. A classification model that predicts player churn, applying analytics to gaming data.</p>
+        <div class="stack"><span>Python</span><span>Machine Learning</span><span>Pandas</span></div>
+        <div class="proj-links"><a href="https://github.com/martinez-ie/player_churn_prediction" target="_blank" rel="noopener" data-show="pt">Codigo &#8599;</a><a href="https://github.com/martinez-ie/player_churn_prediction" target="_blank" rel="noopener" data-show="en">Code &#8599;</a></div>
+      </article>
+
+      <article class="proj reveal">
+        <span class="thumb" aria-hidden="true"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#F4F2EC"/><rect x="60" y="30" width="80" height="24" rx="5" fill="#1E3D59"/><rect x="260" y="30" width="80" height="24" rx="5" fill="#2D6FF0"/><rect x="160" y="100" width="80" height="24" rx="5" fill="#C6EBF7"/><path d="M100,54 L100,80 L200,80 L200,100" fill="none" stroke="#5C6773" stroke-width="2"/><path d="M300,54 L300,80 L200,80" fill="none" stroke="#5C6773" stroke-width="2"/></svg></span>
+        <span class="proj-kind data" data-show="pt">Modelagem de Dados</span><span class="proj-kind data" data-show="en">Data Modeling</span>
+        <h3 data-show="pt">Modelagem de Dados &amp; ETL</h3><div class="proj-meta"><span data-show="pt">Projeto pessoal</span><span data-show="en">Personal project</span><span class="dot">&middot;</span><span data-show="pt">Estudo</span><span data-show="en">Study</span></div>
+        <h3 data-show="en">Data Modeling &amp; ETL</h3>
+        <p data-show="pt">Antes de qualquer grafico bonito, alguem precisa arrumar a casa. Montei um pipeline de ETL que transforma dados brutos e baguncados em estruturas confiaveis, a base silenciosa de todo relatorio que se sustenta.</p>
+        <p data-show="en">Before any pretty chart, someone has to tidy up the house. I built an ETL pipeline that turns raw, messy data into reliable structures, the silent foundation of every report that holds up.</p>
+        <div class="stack"><span>Python</span><span>SQL</span><span>ETL</span><span>Pandas</span></div>
+        <div class="proj-links"><a href="https://github.com/martinez-ie/python_modelagem_de_dados" target="_blank" rel="noopener" data-show="pt">Codigo &#8599;</a><a href="https://github.com/martinez-ie/python_modelagem_de_dados" target="_blank" rel="noopener" data-show="en">Code &#8599;</a></div>
+      </article>
+
+      <article class="proj reveal">
+        <span class="thumb" aria-hidden="true"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#F4F2EC"/><line x1="40" y1="120" x2="360" y2="40" stroke="#2D6FF0" stroke-width="3"/><circle cx="80" cy="118" r="5" fill="#1E3D59"/><circle cx="140" cy="100" r="5" fill="#1E3D59"/><circle cx="200" cy="92" r="5" fill="#1E3D59"/><circle cx="260" cy="68" r="5" fill="#1E3D59"/><circle cx="320" cy="52" r="5" fill="#1E3D59"/><circle cx="170" cy="78" r="5" fill="#C6EBF7"/><circle cx="290" cy="70" r="5" fill="#C6EBF7"/></svg></span>
+        <span class="proj-kind data" data-show="pt">Regressao</span><span class="proj-kind data" data-show="en">Regression</span>
+        <h3 data-show="pt">Modelo de Regressao &mdash; Previsao de Vendas</h3><div class="proj-meta"><span data-show="pt">Projeto pessoal</span><span data-show="en">Personal project</span><span class="dot">&middot;</span><span data-show="pt">Estudo</span><span data-show="en">Study</span></div>
+        <h3 data-show="en">Regression Model &mdash; Sales Forecasting</h3>
+        <p data-show="pt">Quanto vamos vender no proximo mes? Passei anos respondendo isso no feeling; agora respondo com estatistica. Um modelo de regressao que projeta vendas a partir do historico, ligando numero a decisao comercial.</p>
+        <p data-show="en">How much will we sell next month? I spent years answering that on gut feeling; now I answer it with statistics. A regression model that forecasts sales from history, linking the number to a commercial decision.</p>
+        <div class="stack"><span>Python</span><span>Scikit-learn</span><span data-show="pt">Estatistica</span><span data-show="en">Statistics</span></div>
+        <div class="proj-links"><a href="https://github.com/martinez-ie/modelo_regressao" target="_blank" rel="noopener" data-show="pt">Codigo &#8599;</a><a href="https://github.com/martinez-ie/modelo_regressao" target="_blank" rel="noopener" data-show="en">Code &#8599;</a></div>
+      </article>
+
+      <article class="proj reveal">
+        <span class="thumb" aria-hidden="true"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#F4F2EC"/><text x="24" y="30" font-family="JetBrains Mono,monospace" font-size="8" letter-spacing="1.5" fill="#2D6FF0">COMMERCE INTELLIGENCE REPORT</text><text x="24" y="52" font-family="Georgia,serif" font-size="17" font-weight="700" fill="#16202B">R$72.6M <tspan fill="#2D6FF0">/ 15 days</tspan></text><rect x="24" y="68" width="78" height="40" rx="6" fill="#fff" stroke="#E2DED3"/><rect x="110" y="68" width="78" height="40" rx="6" fill="#fff" stroke="#E2DED3"/><rect x="196" y="68" width="78" height="40" rx="6" fill="#fff" stroke="#E2DED3"/><rect x="282" y="68" width="78" height="40" rx="6" fill="#fff" stroke="#E2DED3"/><text x="32" y="98" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#2D6FF0">72.6M</text><text x="118" y="98" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#16202B">80.228</text><text x="204" y="98" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#16202B">R$905</text><text x="290" y="98" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#1F9E6E">0,39%</text><path d="M24,140 L60,128 L96,132 L132,120 L168,108 L204,124 L240,116 L276,134 L312,138 L360,144" fill="none" stroke="#2D6FF0" stroke-width="2"/></svg></span>
+        <span class="proj-kind dev" data-show="pt">Dashboard Web &middot; Full Stack</span><span class="proj-kind dev" data-show="en">Web Dashboard &middot; Full Stack</span>
+        <div class="proj-meta"><span data-show="pt">Autoral</span><span data-show="en">Original</span><span class="dot">&middot;</span><span>2026</span><span class="dot">&middot;</span><span data-show="pt">Estudo</span><span data-show="en">Study</span></div>
+        <h3>Commerce Intelligence Report</h3>
+        <p data-show="pt">Peguei ~80 mil transacoes de e-commerce e construi o painel que eu gostaria de ter tido na epoca de vendas: visao executiva, canais e perfil de cliente, com KPIs e filtros. Dados de estudo, mas a leitura e de quem viveu a mesa comercial. Construido em React.</p>
+        <p data-show="en">I took ~80k e-commerce transactions and built the dashboard I wish I'd had back in my sales days: executive overview, channels and customer profile, with KPIs and filters. Study data, but the reading comes from someone who lived the commercial desk. Built in React.</p>
+        <div class="stack"><span>React</span><span>TypeScript</span><span data-show="pt">Visualizacao</span><span data-show="en">Data Viz</span><span>KPIs</span></div>
+        <div class="proj-links">
+          <a href="https://powerbi-dashboards-three.vercel.app/" target="_blank" rel="noopener" data-show="pt">Demo ao vivo &#8599;</a><a href="https://powerbi-dashboards-three.vercel.app/" target="_blank" rel="noopener" data-show="en">Live demo &#8599;</a>
+          <a href="https://github.com/martinez-ie/powerbi-dashboards" target="_blank" rel="noopener" data-show="pt">Codigo &#8599;</a><a href="https://github.com/martinez-ie/powerbi-dashboards" target="_blank" rel="noopener" data-show="en">Code &#8599;</a>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <span class="thumb" aria-hidden="true"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#F4F2EC"/><g opacity="0.75"><rect x="40" y="40" width="14" height="98" fill="#7EA86E"/><rect x="56" y="96" width="14" height="42" fill="#7EA86E"/><rect x="60" y="78" width="14" height="60" fill="#E08A6E"/><rect x="76" y="62" width="14" height="76" fill="#E07A6E"/><rect x="92" y="80" width="14" height="58" fill="#E08A6E"/><rect x="108" y="98" width="14" height="40" fill="#E5A06E"/><rect x="124" y="108" width="14" height="30" fill="#E5A06E"/><rect x="148" y="112" width="14" height="26" fill="#E5A06E"/><rect x="172" y="116" width="14" height="22" fill="#E5A06E"/><rect x="200" y="118" width="14" height="20" fill="#E5A06E"/><rect x="232" y="116" width="14" height="22" fill="#E5A06E"/><rect x="268" y="120" width="14" height="18" fill="#E5A06E"/><rect x="300" y="118" width="14" height="20" fill="#E5A06E"/><rect x="340" y="110" width="14" height="28" fill="#E5A06E"/></g><circle cx="300" cy="34" r="4" fill="#7EA86E"/><circle cx="300" cy="48" r="4" fill="#E5A06E"/><rect x="310" y="30" width="40" height="6" rx="2" fill="#cfc8bc"/><rect x="310" y="44" width="40" height="6" rx="2" fill="#cfc8bc"/></svg></span>
+        <span class="proj-kind data" data-show="pt">Clusterizacao</span><span class="proj-kind data" data-show="en">Clustering</span>
+        <h3 data-show="pt">Segmentacao de Clientes (RFV)</h3><div class="proj-meta"><span data-show="pt">Projeto pessoal</span><span data-show="en">Personal project</span><span class="dot">&middot;</span><span data-show="pt">Estudo</span><span data-show="en">Study</span></div>
+        <h3 data-show="en">Customer Segmentation (RFV)</h3>
+        <p data-show="pt">Nem todo cliente e igual, e eu sei disso na pratica. Usei RFV e K-Means para separar a base em quatro perfis, dos campeoes aos que estao em risco, e dei a cada grupo um nome de negocio e uma acao. Clusterizacao com cabeca comercial.</p>
+        <p data-show="en">Not every customer is the same, and I know that from practice. I used RFV and K-Means to split the base into four profiles, from champions to at-risk, and gave each group a business name and an action. Clustering with a commercial mind.</p>
+        <div class="stack"><span>Python</span><span>K-Means</span><span data-show="pt">RFV</span><span data-show="en">RFM</span><span>Pandas</span><span>Matplotlib</span></div>
+        <div class="proj-links"><a href="https://github.com/martinez-ie/Clusteriza-o_-RFV_-Segmenta-o_Clientes" target="_blank" rel="noopener" data-show="pt">Codigo &#8599;</a><a href="https://github.com/martinez-ie/Clusteriza-o_-RFV_-Segmenta-o_Clientes" target="_blank" rel="noopener" data-show="en">Code &#8599;</a></div>
+      </article>
+
+      <article class="proj reveal">
+        <span class="thumb" aria-hidden="true"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#F4F2EC"/><rect x="40" y="40" width="320" height="70" rx="6" fill="#fff" stroke="#E2DED3"/><line x1="40" y1="63" x2="360" y2="63" stroke="#E2DED3"/><line x1="40" y1="86" x2="360" y2="86" stroke="#E2DED3"/><line x1="120" y1="40" x2="120" y2="110" stroke="#E2DED3"/><line x1="240" y1="40" x2="240" y2="110" stroke="#E2DED3"/><rect x="48" y="46" width="60" height="9" rx="3" fill="#1E3D59"/><rect x="128" y="46" width="60" height="9" rx="3" fill="#2D6FF0"/><rect x="248" y="46" width="50" height="9" rx="3" fill="#C6EBF7"/></svg></span>
+        <span class="proj-kind data">EDA</span>
+        <h3 data-show="pt">Airbnb &mdash; Limpeza &amp; Analise</h3><div class="proj-meta"><span data-show="pt">Projeto pessoal</span><span data-show="en">Personal project</span><span class="dot">&middot;</span><span data-show="pt">Estudo</span><span data-show="en">Study</span></div>
+        <h3 data-show="en">Airbnb &mdash; Cleaning &amp; EDA</h3>
+        <p data-show="pt">Dados do mundo real chegam baguncados, e tudo bem. Limpei um conjunto do Airbnb tratando valores ausentes e outliers, e fui atras das historias escondidas nos numeros: o que move preco e ocupacao.</p>
+        <p data-show="en">Real-world data arrives messy, and that's fine. I cleaned an Airbnb dataset, handling missing values and outliers, then went after the stories hidden in the numbers: what drives price and occupancy.</p>
+        <div class="stack"><span>Python</span><span>Pandas</span><span data-show="pt">Limpeza</span><span data-show="en">Cleaning</span><span>EDA</span></div>
+        <div class="proj-links"><a href="https://github.com/martinez-ie/airbnb-data-cleaning-and-eda" target="_blank" rel="noopener" data-show="pt">Codigo &#8599;</a><a href="https://github.com/martinez-ie/airbnb-data-cleaning-and-eda" target="_blank" rel="noopener" data-show="en">Code &#8599;</a></div>
+      </article>
+
+      <article class="proj reveal">
+        <span class="thumb" aria-hidden="true"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#F4F2EC"/><rect x="60" y="80" width="34" height="50" fill="#1E3D59"/><rect x="110" y="62" width="34" height="68" fill="#1E3D59"/><rect x="160" y="44" width="34" height="86" fill="#2D6FF0"/><rect x="210" y="70" width="34" height="60" fill="#1E3D59"/><rect x="260" y="54" width="34" height="76" fill="#1E3D59"/><rect x="310" y="92" width="34" height="38" fill="#C6EBF7"/></svg></span>
+        <span class="proj-kind data" data-show="pt">Analise</span><span class="proj-kind data" data-show="en">Analysis</span>
+        <h3 data-show="pt">Analise de Dados Salariais</h3><div class="proj-meta"><span data-show="pt">Projeto pessoal</span><span data-show="en">Personal project</span><span class="dot">&middot;</span><span data-show="pt">Estudo</span><span data-show="en">Study</span></div>
+        <h3 data-show="en">Salary Data Analysis</h3>
+        <p data-show="pt">O que de fato pesa no quanto alguem ganha? Analisei dados salariais para encontrar os fatores por tras da remuneracao, com visualizacoes e estatistica que traduzem o numero em conversa.</p>
+        <p data-show="en">What really weighs on how much someone earns? I analyzed salary data to find the factors behind compensation, with visualizations and statistics that turn the number into a conversation.</p>
+        <div class="stack"><span>Python</span><span>Pandas</span><span>Matplotlib</span><span data-show="pt">Estatistica</span><span data-show="en">Statistics</span></div>
+        <div class="proj-links"><a href="https://github.com/martinez-ie/salary-data-analysis" target="_blank" rel="noopener" data-show="pt">Codigo &#8599;</a><a href="https://github.com/martinez-ie/salary-data-analysis" target="_blank" rel="noopener" data-show="en">Code &#8599;</a></div>
+      </article>
+
+      <article class="proj reveal">
+        <span class="thumb" aria-hidden="true"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><rect width="400" height="150" fill="#F4F2EC"/><path d="M40,40 L120,40 L120,75 L200,75 L200,110 L280,110" fill="none" stroke="#1E3D59" stroke-width="3"/><path d="M40,40 L120,40 L120,75 L200,75" fill="none" stroke="#2D6FF0" stroke-width="3"/><circle cx="120" cy="40" r="6" fill="#2D6FF0"/><circle cx="200" cy="75" r="6" fill="#1E3D59"/><circle cx="280" cy="110" r="6" fill="#C6EBF7"/><rect x="300" y="50" width="60" height="9" rx="3" fill="#1E3D59" opacity=".4"/><rect x="300" y="68" width="44" height="9" rx="3" fill="#2D6FF0" opacity=".4"/></svg></span>
+        <span class="proj-kind data">Machine Learning</span>
+        <h3 data-show="pt">Customer Churn &mdash; Pipeline ML</h3><div class="proj-meta"><span data-show="pt">Projeto pessoal</span><span data-show="en">Personal project</span><span class="dot">&middot;</span><span data-show="pt">Estudo</span><span data-show="en">Study</span></div>
+        <h3 data-show="en">Customer Churn &mdash; ML Pipeline</h3>
+        <p data-show="pt">Aqui fui mais fundo no churn: pipeline completo com engenharia de atributos, comparacao de varios modelos e avaliacao por metricas, sempre perguntando o porque, nao so o quem. Entender o motivo da evasao vale mais que so prever.</p>
+        <p data-show="en">Here I went deeper into churn: a full pipeline with feature engineering, comparing several models and metric-based evaluation, always asking the why, not just the who. Understanding the reason for churn is worth more than just predicting it.</p>
+        <div class="stack"><span>Python</span><span>Scikit-learn</span><span data-show="pt">Engenharia de Atributos</span><span data-show="en">Feature Engineering</span></div>
+        <div class="proj-links"><a href="https://github.com/martinez-ie/customer-churn-prediction" target="_blank" rel="noopener" data-show="pt">Codigo &#8599;</a><a href="https://github.com/martinez-ie/customer-churn-prediction" target="_blank" rel="noopener" data-show="en">Code &#8599;</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-tag">// 04</div>
+    <h2 data-show="pt">Trajetoria</h2><h2 data-show="en">Journey</h2>
+    <p class="sec-sub" data-show="pt">12 anos construindo resultados comerciais B2B, agora com uma camada tecnica de dados e desenvolvimento.</p>
+    <p class="sec-sub" data-show="en">12 years building B2B commercial results, now with a technical layer of data and development.</p>
+    <div class="timeline">
+      <div class="tl dev"><div class="when" data-show="pt">Fev 2026 &ndash; Fev 2028</div><div class="when" data-show="en">Feb 2026 &ndash; Feb 2028</div><h3>Estacio</h3><div class="role dev" data-show="pt">Pos-graduacao &middot; Data Science &amp; Big Data Analytics</div><div class="role dev" data-show="en">Postgraduate &middot; Data Science &amp; Big Data Analytics</div><p data-show="pt">Especializacao em ciencia de dados, modelagem estatistica e analytics em larga escala.</p><p data-show="en">Specialization in data science, statistical modeling and large-scale analytics.</p><div class="place" data-show="pt">Remoto</div><div class="place" data-show="en">Remote</div></div>
+      <div class="tl dev"><div class="when" data-show="pt">2025 &ndash; Presente</div><div class="when" data-show="en">2025 &ndash; Present</div><h3>Rocketseat</h3><div class="role dev" data-show="pt">Formacao Full Stack</div><div class="role dev" data-show="en">Full Stack Program</div><p data-show="pt">Desenvolvimento web moderno com React, Next.js, TypeScript e Node.js, com foco em qualidade, testes e acessibilidade.</p><p data-show="en">Modern web development with React, Next.js, TypeScript and Node.js, focused on quality, testing and accessibility.</p><div class="place" data-show="pt">Remoto</div><div class="place" data-show="en">Remote</div></div>
+      <div class="tl dev"><div class="when" data-show="pt">2023 &ndash; 2024</div><div class="when" data-show="en">2023 &ndash; 2024</div><h3>Escola DNC</h3><div class="role dev" data-show="pt">Formacao em Cientista de Dados</div><div class="role dev" data-show="en">Data Scientist Program</div><p data-show="pt">Formacao intensiva em ciencia de dados: Python, SQL, analise exploratoria, machine learning e visualizacao, com projetos praticos de ponta a ponta.</p><p data-show="en">Intensive data science training: Python, SQL, exploratory analysis, machine learning and visualization, with end-to-end hands-on projects.</p><div class="place" data-show="pt">Remoto</div><div class="place" data-show="en">Remote</div></div>
+      <div class="tl"><div class="when" data-show="pt">Out 2024 &ndash; Presente</div><div class="when" data-show="en">Oct 2024 &ndash; Present</div><h3>Costa Coffee</h3><div class="role" data-show="pt">Customer Service</div><div class="role" data-show="en">Customer Service</div><p data-show="pt">Atendimento ao cliente em ambiente dinamico, conciliado com estudos em dados e desenvolvimento.</p><p data-show="en">Customer service in a fast-paced environment, balanced with studies in data and development.</p><div class="place">Kilkenny, Ireland</div></div>
+      <div class="tl"><div class="when" data-show="pt">Jun 2022 &ndash; Abr 2023</div><div class="when" data-show="en">Jun 2022 &ndash; Apr 2023</div><h3>Cobli</h3><div class="role">Key Account Manager</div><p data-show="pt">Gestao de contas estrategicas em SaaS de ciclo de vendas longo, com upsell e cross-sell guiados por analise de metricas. No periodo: ~40 propostas comerciais elaboradas, media de ~15 clientes em teste (POC) e ~5 contratos fechados &mdash; cerca de 1 a cada 3 testes convertido em contrato.</p><p data-show="en">Strategic account management in long sales-cycle SaaS, with upsell and cross-sell driven by metric analysis. Over the period: ~40 commercial proposals, an average of ~15 customers in trial (POC) and ~5 closed contracts &mdash; roughly 1 in 3 trials converted into a contract.</p><div class="place" data-show="pt">Sao Paulo, Brasil (Remoto)</div><div class="place" data-show="en">Sao Paulo, Brazil (Remote)</div></div>
+      <div class="tl"><div class="when" data-show="pt">Mai 2019 &ndash; Mai 2022</div><div class="when" data-show="en">May 2019 &ndash; May 2022</div><h3>Gerdau</h3><div class="role" data-show="pt">Especialista de Vendas</div><div class="role" data-show="en">Sales Specialist</div><p data-show="pt">Gestao de carteira, relacionamento com clientes e analise de performance comercial.</p><p data-show="en">Portfolio management, client relationships and commercial performance analysis.</p><div class="place" data-show="pt">Salvador, Brasil</div><div class="place" data-show="en">Salvador, Brazil</div></div>
+      <div class="tl"><div class="when" data-show="pt">Nov 2015 &ndash; Abr 2019</div><div class="when" data-show="en">Nov 2015 &ndash; Apr 2019</div><h3>Gerdau</h3><div class="role" data-show="pt">Analista (Sales Operations)</div><div class="role" data-show="en">Analyst (Sales Operations)</div><p data-show="pt">Processos administrativos, analise de dados de vendas e suporte a operacao comercial &mdash; base para a transicao em vendas diretas.</p><p data-show="en">Administrative processes, sales data analysis and commercial operations support &mdash; the foundation for the move into direct sales.</p><div class="place" data-show="pt">Salvador, Brasil</div><div class="place" data-show="en">Salvador, Brazil</div></div>
+      <details class="more">
+        <summary data-show="pt">Ver experiencia anterior</summary><summary data-show="en">Show earlier experience</summary>
+        <div style="margin-top:26px" class="timeline">
+          <div class="tl"><div class="when" data-show="pt">Jun 2017 &ndash; Ago 2020</div><div class="when" data-show="en">Jun 2017 &ndash; Aug 2020</div><h3>Viver Natura</h3><div class="role" data-show="pt">Cofundadora</div><div class="role" data-show="en">Co-founder</div><p data-show="pt">Criacao e operacao de marca propria, desenvolvimento de produtos e gestao de orcamento.</p><p data-show="en">Creation and operation of an own brand, product development and budget management.</p><div class="place" data-show="pt">Salvador, Brasil</div><div class="place" data-show="en">Salvador, Brazil</div></div>
+          <div class="tl"><div class="when" data-show="pt">Jan 2014 &ndash; Jan 2015</div><div class="when" data-show="en">Jan 2014 &ndash; Jan 2015</div><h3>Unilever</h3><div class="role" data-show="pt">Estagio</div><div class="role" data-show="en">Internship</div><p data-show="pt">Analise de performance de vendas e suporte ao time de merchandising.</p><p data-show="en">Sales performance analysis and support to the merchandising team.</p><div class="place" data-show="pt">Salvador, Brasil</div><div class="place" data-show="en">Salvador, Brazil</div></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-tag">// 05</div>
+    <h2 data-show="pt">Vamos conversar</h2><h2 data-show="en">Let's talk</h2>
+    <p class="sec-sub" data-show="pt">Aberta a oportunidades em dados, desenvolvimento e papeis comerciais tecnicos.</p>
+    <p class="sec-sub" data-show="en">Open to opportunities in data, development and technical commercial roles.</p>
+    <div class="contact-grid">
+      <div>
+        <div class="ci"><div class="lbl">Email</div><a href="mailto:ingrid-martinez@hotmail.com">ingrid-martinez@hotmail.com</a></div>
+        <div class="ci"><div class="lbl" data-show="pt">Telefone</div><div class="lbl" data-show="en">Phone</div><a href="tel:+353899883066">+353 89 988 3066</a></div>
+        <div class="ci"><div class="lbl" data-show="pt">Localizacao</div><div class="lbl" data-show="en">Location</div><span>Kilkenny, Ireland</span></div>
+        <div class="ci"><div class="lbl" data-show="pt">Elegibilidade</div><div class="lbl" data-show="en">Work eligibility</div><span data-show="pt">Stamp 1G como conjuge / parceira de facto</span><span data-show="en">Stamp 1G as spouse / de facto partner</span></div>
+        <div class="ci"><div class="lbl" data-show="pt">Idiomas</div><div class="lbl" data-show="en">Languages</div>
+          <div class="langs"><span class="lg" data-show="pt"><b>Portugues</b> nativo</span><span class="lg" data-show="en"><b>Portuguese</b> native</span><span class="lg" data-show="pt"><b>Ingles</b> avancado</span><span class="lg" data-show="en"><b>English</b> advanced</span></div>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/martinez-ie" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+          <a href="https://www.linkedin.com/in/ingridmartinezm/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5V8h3v11ZM6.5 6.7a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6ZM19 19h-3v-5.6c0-1.3 0-3-1.9-3S12 11.8 12 13.3V19H9V8h2.9v1.5h.1a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.7 2 3.7 4.7V19Z"/></svg></a>
+        </div>
+      </div>
+      <div class="contact-cta">
+        <h3 data-show="pt">Certificados</h3><h3 data-show="en">Certificates</h3>
+        <p data-show="pt">Veja minhas certificacoes em ciencia de dados e desenvolvimento.</p>
+        <p data-show="en">Browse my data science and development certifications.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/martinez-ie/Data-Science-Certification" target="_blank" rel="noopener" data-show="pt">Ver certificados</a><a class="btn btn-primary" href="https://github.com/martinez-ie/Data-Science-Certification" target="_blank" rel="noopener" data-show="en">View certificates</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span data-show="pt">&copy; 2026 Ingrid Martinez &middot; Feito com cafe, codigo e dois fusos horarios de distancia 🌎</span><span data-show="en">&copy; 2026 Ingrid Martinez &middot; Made with coffee, code and two time zones of distance 🌎</span>
+    <span data-show="pt">Do Brasil para Kilkenny</span><span data-show="en">From Brazil to Kilkenny</span>
+  </div>
+</footer>
+</div>
+
+<script>
+  var langBtn=document.getElementById('langBtn');
+  var html=document.documentElement;
+  function setLang(l){html.setAttribute('data-lang',l);html.setAttribute('lang',l);langBtn.querySelector('.pt').classList.toggle('on',l==='pt');langBtn.querySelector('.en').classList.toggle('on',l==='en');}
+  langBtn.addEventListener('click',function(){setLang(html.getAttribute('data-lang')==='pt'?'en':'pt');});
+  try{var nav=(navigator.language||navigator.userLanguage||'pt').toLowerCase();if(nav.indexOf('pt')!==0){setLang('en');}}catch(e){}
+
+  var mt=document.getElementById('menuToggle'),mn=document.getElementById('mobileNav');
+  mt.addEventListener('click',function(){mn.classList.toggle('open')});
+  mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open')})});
+
+  // Active section highlight in side index
+  var secs=document.querySelectorAll('section[id]');
+  var navlinks=document.querySelectorAll('.sidenav a[data-sec]');
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          navlinks.forEach(function(l){l.classList.toggle('active', l.getAttribute('data-sec')===en.target.id);});
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){so.observe(s)});
+  }
+
+  // Fade-in
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});}
+</script>
+</body>
+</html>
