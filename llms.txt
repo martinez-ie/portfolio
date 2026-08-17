@@ -1,0 +1,78 @@
+# Ingrid Martinez Martins
+
+> Data analyst with 12 years of B2B commercial experience (industrial sales, FMCG, SaaS),
+> now building the models, dashboards and applications behind commercial decisions.
+> Based in Kilkenny, Ireland. Authorised to work in Ireland (Stamp 1G).
+> Native Portuguese, advanced English.
+
+## Positioning
+
+Ingrid is a commercial-data hybrid: someone who spent 12 years carrying a sales
+number and now builds the analytics that explain it. She is not a career-switcher
+starting from zero — the domain knowledge (funnel, portfolio, churn, conversion,
+account management) predates the technical layer.
+
+Open to: Data Analyst, Business Analyst, Revenue Operations, Sales Analytics,
+Customer Success Operations, and technical commercial roles. Ireland or remote.
+
+## Verified proof points
+
+- Cobli (Key Account Manager, SaaS, 2022-2023): around 30 commercial proposals,
+  11 strategic accounts under management, R$200k+ in closed contracts in 7 months,
+  in a long sales cycle.
+- Gerdau (Sales Specialist, 2019-2022): portfolio of around 80 accounts per month,
+  R$800k in average monthly revenue, delinquency reduced to a 5% to 15% range.
+- Lacrei Saúde front-end challenge: Lighthouse 100 accessibility, 97 performance,
+  WCAG AA contrast, with direct feedback from the founder.
+- 7 years at Gerdau (industrial steel), across operations analysis (2015-2019) and
+  direct sales (2019-2022).
+- Co-founded Viver Natura (2017-2020), launching two retail stores alongside Gerdau.
+- Google Student Ambassador 2026.
+
+## Skills
+
+Data: Python, SQL, Pandas, scikit-learn, Power BI, DAX, Excel, ETL, machine learning,
+churn prediction, RFM segmentation, K-Means clustering, regression / sales forecasting.
+
+Engineering: TypeScript, JavaScript, React, Next.js, Node.js, Jest / React Testing
+Library, web accessibility (WCAG).
+
+Commercial: key account management, B2B sales, long sales cycles, upsell / cross-sell,
+proposal writing, pipeline and portfolio management.
+
+## Education
+
+- Estácio — Postgraduate, Data Science & Big Data Analytics (2026–2028, in progress)
+- Rocketseat — Full Stack programme (2025–present)
+- Escola DNC - Data Science Formation, 200+ hours (2023-2026)
+- UNIFACS, Salvador, Brazil — BA in Business Administration
+
+## Links
+
+- Portfolio: https://ingrid-martinez-portfolio.vercel.app/
+- GitHub: https://github.com/martinez-ie
+- LinkedIn: https://www.linkedin.com/in/ingridmartinezm/
+- Certifications: https://github.com/martinez-ie/Data-Science-Certification
+
+## Selected projects
+
+- Commerce Intelligence Report — dashboard over ~80k e-commerce transactions;
+  executive overview, channels, customer profile. React + TypeScript.
+  https://github.com/martinez-ie/powerbi-dashboards
+- Lume — original full stack product for data professionals to create and track
+  client briefings across nine stages. https://github.com/martinez-ie/lume
+- Customer Segmentation (RFM) — K-Means clustering into four business profiles,
+  each with a recommended commercial action.
+  https://github.com/martinez-ie/Clusteriza-o_-RFV_-Segmenta-o_Clientes
+- Churn Prediction ML Pipeline — feature engineering, model comparison, metric
+  evaluation. https://github.com/martinez-ie/customer-churn-prediction
+- Regression Model — sales forecasting from historical data.
+  https://github.com/martinez-ie/modelo_regressao
+- Lacrei Saúde front-end challenge — accessibility-first Next.js application.
+  https://github.com/martinez-ie/lacrei-frontend-challenge
+
+## Contact
+
+Email: ingrid-martinez@hotmail.com
+Location: Kilkenny, Ireland
+Work eligibility: Stamp 1G (spouse / de facto partner) — no employer sponsorship required
